@@ -5,6 +5,10 @@ The goal was to design and code a desktop application in Java for managing ticke
 
 ## Pre-Run
 
+Run [DBCreate.sql](sql/DBCreate.sql) in SQL Server Management Studio.
+
+Enable SQL Server Authentication and enable sa login [docs.microsoft](https://docs.microsoft.com/en-us/sql/database-engine/configure-windows/change-server-authentication-mode?redirectedfrom=MSDN&view=sql-server-ver15)
+
 Configure Build Path (Module Path)
 - Add JRE JavaSE-14
 - Add JUnit 5
