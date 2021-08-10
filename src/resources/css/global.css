@@ -1,0 +1,99 @@
+/*General */
+.gradient-background {
+	-fx-background-color: linear-gradient(to bottom, #F3F3F3, #C9D0D8);
+}
+.shadow-bottom-right {
+	-fx-effect: dropshadow(gaussian, #d3d3d3, 10.0, 0.0, 4.0, 4.0);
+}
+
+/*Common */
+.text-field, .text-area, .combo-box, .list-view {
+	-fx-border-radius: 0.0;
+	-fx-background-radius: 0.0 ;
+	-fx-border-width: 1.0; 
+	-fx-border-color: #707070;	
+	-fx-background-color: white;
+	-fx-control-inner-background: white;
+}
+.text-field:disabled, .text-area:disabled, .combo-box:disabled, .list-view:disabled, .table-view:disabled {
+	 -fx-opacity: 1.0;
+	 -fx-border-color: #CDCDCD;
+	 -fx-background-color: #F8F8F8;
+	 -fx-control-inner-background: #F8F8F8;
+}
+
+/*Button */
+.button {
+	-fx-font-family: "Metropolis Black";
+	-fx-text-fill: #707070;
+    -fx-border-radius: 0.0;
+    -fx-border-color: #707070;
+	-fx-background-radius: 0.0;
+	-fx-background-color: #F2F2F2;
+}
+.button-small {
+    -fx-font-size: 12.0;
+	-fx-border-width: 1.5; 
+}
+.button-medium {
+	-fx-font-size: 16.0;
+	-fx-border-width: 2.0; 
+}
+.button-large {
+	-fx-font-size: 25.0;
+	-fx-border-width: 2.0; 
+}
+.button:hover, .button:focused {
+	-fx-border-color: dodgerblue;
+}
+.button:pressed {
+	-fx-background-color: #d3d3d3;
+}
+
+/*Combo box */
+.combo-box .arrow{
+    -fx-background-color:#2478E9;
+}
+.combo-box .arrow:disabled{
+     -fx-opacity: 0.4;
+}
+.list-cell:disabled {
+    -fx-opacity: 1;
+} 
+ 
+ /*Check box */ 
+ .check-box, .mark, .box  {
+	-fx-border-radius: 0.0;
+	-fx-background-radius: 0.0 ;
+}
+
+/*Date picker */
+.date-picker > .arrow-button {
+    -fx-border-radius: 0.0;
+    -fx-border-color: #707070;
+	-fx-background-radius: 0.0;
+	-fx-background-color: #F2F2F2;
+		-fx-border-width: 1 1 1 0; 
+}
+
+.date-picker > .arrow-button:pressed {
+	-fx-background-color: #d3d3d3;
+}
+
+/*Table view */
+.table-view {
+	-fx-border-radius: 0.0;
+	-fx-background-radius: 0.0 ;
+	-fx-border-width: 1.0; 
+	-fx-border-color: #707070;
+	-fx-border-radius: 0.0;
+	-fx-background-radius: 0.0 ;
+	-fx-background-color: #F2F2F2, white;
+	-fx-background-insets: 0.0, 25.0 .0 0.0 0.0;
+}
+.table-view-top-border {
+	-fx-border-width: 1.0 0.0 0.0 0.0; 
+}
+.column-header {
+	-fx-background-color: #F2F2F2;
+}

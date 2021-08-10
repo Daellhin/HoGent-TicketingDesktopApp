@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<fx:root alignment="TOP_LEFT" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="980.0" type="StackPane" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <SplitPane dividerPositions="0.5184049079754601" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0">
+               <children>
+                  <Label fx:id="lblManageContractTypes" prefHeight="27.0" prefWidth="242.0" text="Manage Contract Types" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="252.0" AnchorPane.topAnchor="5.0">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="btnAddContractTypes" layoutX="222.0" layoutY="4.0" mnemonicParsing="false" onAction="#addContractType" prefHeight="27.0" styleClass="button-small" text="Add Contract Type" AnchorPane.rightAnchor="105.0" AnchorPane.topAnchor="5.0">
+                     <graphic>
+                        <ImageView fitHeight="15.0" fitWidth="15.0">
+                           <image>
+                              <Image url="@../../resources/images/plus.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btnShowFilters" layoutX="370.0" layoutY="4.0" mnemonicParsing="false" onAction="#showFilters" styleClass="button-small" stylesheets="@../../resources/css/beheerScherm.css" text="Filters ▼" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="5.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="15.0" fitWidth="17.0">
+                           <image>
+                              <Image url="@../../resources/images/filter.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <TableView fx:id="tableBeheerContractTypes" focusTraversable="false" prefHeight="172.0" prefWidth="978.0" styleClass="table-view-top-border" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="38.0">
+                     <columns>
+                        <TableColumn fx:id="colNaam" prefWidth="130.0" text="Name" />
+                        <TableColumn fx:id="colStatus" prefWidth="130.0" text="Status" />
+                        <TableColumn fx:id="colLopendeContracten" prefWidth="130.0" text="# Current Contracts" />
+                     </columns>
+                     <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                     </columnResizePolicy>
+                  </TableView>
+                  <AnchorPane fx:id="anchorFilters" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="194.0" prefWidth="220.0" style="-fx-background-color: white;" styleClass="shadow-bottom-right" stylesheets="@../../resources/css/global.css" visible="false" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="32.0">
+                     <children>
+                        <Label layoutX="10.0" layoutY="14.0" text="Name" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="14.0" />
+                        <TextField fx:id="txfFilterName" layoutX="10.0" layoutY="34.0" onKeyReleased="#filterOnAction" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="34.0" />
+                        <Label layoutX="10.0" layoutY="70.0" text="Minimum amount of current contracts " AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="70.0" />
+                        <TextField fx:id="txfFilterMinLopendeContracten" layoutX="10.0" layoutY="90.0" onKeyReleased="#filterOnAction" prefHeight="25.0" prefWidth="200.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="90.0" />
+                        <Label layoutX="11.0" layoutY="125.0" text="Status" AnchorPane.leftAnchor="11.0" AnchorPane.topAnchor="125.0" />
+                        <CheckBox fx:id="chkFilterActive" layoutX="11.0" layoutY="145.0" mnemonicParsing="false" onAction="#filterOnAction" selected="true" text="Active" AnchorPane.leftAnchor="11.0" AnchorPane.topAnchor="145.0" />
+                        <CheckBox fx:id="chkFilterInactive" layoutX="11.0" layoutY="168.0" mnemonicParsing="false" onAction="#filterOnAction" text="Inactive" />
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0">
+               <children>
+                  <ScrollPane fitToWidth="true" pannable="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <content>
+                        <AnchorPane layoutY="500.0">
+                           <children>
+                              <VBox>
+                                 <children>
+                                    <HBox alignment="CENTER_LEFT">
+                                       <children>
+                                          <Label text="Contract Type Information">
+                                             <font>
+                                                <Font size="20.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="lblErrorSaveChanges" prefHeight="0.0" prefWidth="220.0" textFill="RED" wrapText="true">
+                                             <font>
+                                                <Font size="1.0" />
+                                             </font>
+                                             <HBox.margin>
+                                                <Insets left="20.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets left="24.0" top="20.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                    <AnchorPane>
+                                       <children>
+                                          <Label text="Name" AnchorPane.leftAnchor="24.0" AnchorPane.topAnchor="0.0">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="txfNaam" layoutX="24.0" layoutY="19.0" prefWidth="220.0" styleClass="textfield-error" AnchorPane.leftAnchor="24.0" AnchorPane.topAnchor="19.0" />
+                                          <Label layoutX="247.0" text="Ticket submission time" AnchorPane.leftAnchor="270.0" AnchorPane.topAnchor="0.0">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <ComboBox fx:id="cboTicketTijd" layoutX="247.0" layoutY="19.0" prefWidth="220.0" AnchorPane.leftAnchor="270.0" AnchorPane.topAnchor="19.0" />
+                                       </children>
+                                    </AnchorPane>
+                                    <HBox>
+                                       <children>
+                                          <Label fx:id="lblErrorName" prefWidth="220.0" textFill="RED" wrapText="true">
+                                             <font>
+                                                <Font size="1.0" />
+                                             </font>
+                                             <HBox.margin>
+                                                <Insets left="24.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                          <Label fx:id="lblErrorTicketTime" prefWidth="220.0" textFill="RED" wrapText="true">
+                                             <font>
+                                                <Font size="1.0" />
+                                             </font>
+                                             <HBox.margin>
+                                                <Insets left="27.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                       </children>
+                                    </HBox>
+                                    <AnchorPane>
+                                       <children>
+                                          <Label text="Maximum processing time (in days)" AnchorPane.leftAnchor="24.0" AnchorPane.topAnchor="0.0">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="txfMaxAfhandeltijd" layoutX="24.0" layoutY="13.0" prefWidth="220.0" AnchorPane.leftAnchor="24.0" AnchorPane.topAnchor="19.0" />
+                                          <ComboBox fx:id="cboMinContractLengte" layoutX="209.0" layoutY="22.0" prefWidth="220.0" AnchorPane.leftAnchor="270.0" AnchorPane.topAnchor="19.0" />
+                                          <Label layoutX="235.0" layoutY="4.0" text="Minimum contract length" AnchorPane.leftAnchor="270.0" AnchorPane.topAnchor="0.0">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </AnchorPane>
+                                    <HBox>
+                                       <children>
+                                          <Label fx:id="lblErrorMaxAfhandeltijd" prefWidth="220.0" textFill="RED" wrapText="true">
+                                             <font>
+                                                <Font size="1.0" />
+                                             </font>
+                                             <HBox.margin>
+                                                <Insets left="24.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                          <Label fx:id="lblErrorMinContractLengte" prefWidth="220.0" textFill="RED" wrapText="true">
+                                             <font>
+                                                <Font size="1.0" />
+                                             </font>
+                                             <HBox.margin>
+                                                <Insets left="28.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                       </children>
+                                    </HBox>
+                                    <AnchorPane>
+                                       <children>
+                                          <Label fx:id="lblStatus" text="Status" AnchorPane.leftAnchor="24.0">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <ComboBox fx:id="cboStatus" layoutX="24.0" layoutY="19.0" prefWidth="220.0" AnchorPane.leftAnchor="24.0" AnchorPane.topAnchor="19.0" />
+                                          <Label layoutX="10.0" layoutY="10.0" text="Cost" AnchorPane.leftAnchor="270.0" AnchorPane.topAnchor="0.0">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="txfCost" layoutX="315.0" layoutY="19.0" prefWidth="220.0" AnchorPane.leftAnchor="270.0" AnchorPane.topAnchor="19.0" />
+                                       </children>
+                                    </AnchorPane>
+                                    <HBox>
+                                       <children>
+                                          <Label fx:id="lblErrorStatus" prefWidth="220.0" textFill="RED" wrapText="true">
+                                             <font>
+                                                <Font size="1.0" />
+                                             </font>
+                                             <HBox.margin>
+                                                <Insets left="24.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                          <Label fx:id="lblErrorCost" prefWidth="220.0" textFill="RED" wrapText="true">
+                                             <font>
+                                                <Font size="1.0" />
+                                             </font>
+                                             <HBox.margin>
+                                                <Insets left="27.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                       </children>
+                                    </HBox>
+                                    <Label text="Ticket submission manner">
+                                       <VBox.margin>
+                                          <Insets bottom="3.0" left="24.0" />
+                                       </VBox.margin>
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <HBox>
+                                       <children>
+                                          <CheckBox fx:id="chkEmail" mnemonicParsing="false" text="By e-mail">
+                                             <HBox.margin>
+                                                <Insets left="24.0" />
+                                             </HBox.margin>
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </CheckBox>
+                                          <CheckBox fx:id="chkTelefoon" mnemonicParsing="false" text="By telephone">
+                                             <HBox.margin>
+                                                <Insets left="24.0" />
+                                             </HBox.margin>
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </CheckBox>
+                                          <CheckBox fx:id="chkApp" mnemonicParsing="false" text="Through the app">
+                                             <HBox.margin>
+                                                <Insets left="24.0" />
+                                             </HBox.margin>
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </CheckBox>
+                                       </children>
+                                    </HBox>
+                                    <Label fx:id="lblErrorTicketManner" prefWidth="433.0" textFill="RED" wrapText="true">
+                                       <font>
+                                          <Font size="1.0" />
+                                       </font>
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" left="24.0" top="5.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <VBox fx:id="vboxDetails">
+                                       <VBox.margin>
+                                          <Insets bottom="10.0" top="10.0" />
+                                       </VBox.margin>
+                                       <children>
+                                          <Label text="Detailed Information">
+                                             <font>
+                                                <Font size="20.0" />
+                                             </font>
+                                             <VBox.margin>
+                                                <Insets bottom="3.0" left="23.0" />
+                                             </VBox.margin>
+                                          </Label>
+                                          <AnchorPane>
+                                             <children>
+                                                <Label text="Number of current contracts:">
+                                                   <font>
+                                                      <Font size="14.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label layoutY="26.0" text="Number of resolved tickets:" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="26.0">
+                                                   <font>
+                                                      <Font size="14.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label layoutY="52.0" text="Ticket succes rate:">
+                                                   <font>
+                                                      <Font size="14.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="lblDetailsNumberContracts" layoutX="220.0" layoutY="2.0" text="25" AnchorPane.leftAnchor="220.0" AnchorPane.topAnchor="0.0">
+                                                   <font>
+                                                      <Font size="14.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="lblDetailsNumberTickets" layoutX="230.0" layoutY="12.0" text="52" AnchorPane.leftAnchor="220.0" AnchorPane.topAnchor="26.0">
+                                                   <font>
+                                                      <Font size="14.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="lblDetailsTicketSuccesRate" layoutX="240.0" layoutY="22.0" text="96,5%" AnchorPane.leftAnchor="220.0" AnchorPane.topAnchor="52.0">
+                                                   <font>
+                                                      <Font size="14.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets left="23.0" />
+                                             </VBox.margin>
+                                          </AnchorPane>
+                                       </children>
+                                    </VBox>
+                                    <HBox>
+                                       <children>
+                                          <Button fx:id="btnSaveChanges" maxHeight="-Infinity" minHeight="-Infinity" mnemonicParsing="false" onAction="#saveChanges" prefHeight="37.0" styleClass="button-medium" text="Save changes">
+                                             <font>
+                                                <Font size="16.0" />
+                                             </font>
+                                             <graphic>
+                                                <ImageView fitHeight="20.0" fitWidth="20.0">
+                                                   <image>
+                                                      <Image url="@../../resources/images/checkmark.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                             <HBox.margin>
+                                                <Insets left="24.0" top="10.0" />
+                                             </HBox.margin>
+                                          </Button>
+                                          <Button fx:id="btnCancel" maxHeight="-Infinity" minHeight="-Infinity" mnemonicParsing="false" onAction="#cancelChanges" prefHeight="37.0" styleClass="button-medium" text="Cancel">
+                                             <font>
+                                                <Font size="16.0" />
+                                             </font>
+                                             <graphic>
+                                                <ImageView fitHeight="22.0" fitWidth="22.0">
+                                                   <image>
+                                                      <Image url="@../../resources/images/cross.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                             <HBox.margin>
+                                                <Insets left="10.0" top="10.0" />
+                                             </HBox.margin>
+                                          </Button>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </ScrollPane>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+   <stylesheets>
+      <URL value="@../../resources/css/global.css" />
+      <URL value="@../../resources/css/beheerScherm.css" />
+   </stylesheets>
+</fx:root>

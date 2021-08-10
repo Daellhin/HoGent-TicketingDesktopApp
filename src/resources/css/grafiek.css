@@ -1,0 +1,63 @@
+/*Button */
+.button-left{
+	-fx-border-width: 1 0 1 1; 
+}
+
+.button-middle {
+	-fx-border-color: 1 0 1 0;
+}
+
+.button-right {
+	-fx-border-width: 1 1 1 0; 
+}
+
+.button:hover, .button:focused {
+	-fx-border-color: #707070;
+	-fx-background-color: #d3d3d3;
+}
+
+/*Bar chart */
+.default-color0.chart-bar {
+	-fx-bar-fill: dodgerblue;
+}
+.default-color1.chart-bar {
+	-fx-bar-fill: red;
+}
+
+/*Pie chart */
+.data11.chart-pie {
+	-fx-pie-color: turquoise;
+}
+.data10.chart-pie {
+	-fx-pie-color: aquamarine;
+}
+.data9.chart-pie {
+	-fx-pie-color: cornflowerblue;
+}
+.data8.chart-pie {
+	-fx-pie-color: blue;
+}
+.data7.chart-pie {
+	-fx-pie-color: cadetblue;
+}
+.data6.chart-pie {
+	-fx-pie-color: navy;
+}
+.data5.chart-pie {
+	-fx-pie-color: deepskyblue;
+}
+.data4.chart-pie {
+	-fx-pie-color: cyan;
+}
+.data3.chart-pie {
+	-fx-pie-color: steelblue;
+}
+.data2.chart-pie {
+	-fx-pie-color: teal;
+}
+.data1.chart-pie {
+	-fx-pie-color: royalblue;
+}
+.data0.chart-pie {
+	-fx-pie-color: dodgerblue;
+}

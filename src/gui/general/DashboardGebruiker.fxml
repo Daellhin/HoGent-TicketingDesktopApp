@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="980.0" type="AnchorPane" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ImageView fx:id="imvLogo" fitHeight="105.0" fitWidth="803.0" layoutX="209.0" layoutY="348.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="321.0" AnchorPane.leftAnchor="209.0" AnchorPane.rightAnchor="208.06805419921875" AnchorPane.topAnchor="348.0">
+         <image>
+            <Image url="@../../resources/images/actemium.png" />
+         </image>
+      </ImageView>
+   </children>
+</fx:root>

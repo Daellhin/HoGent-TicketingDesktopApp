@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<fx:root styleClass="gradient-background" type="BorderPane" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <center>
+      <VBox alignment="CENTER" fillWidth="false" maxWidth="700.0" minWidth="700.0" styleClass="center-panel" BorderPane.alignment="CENTER">
+         <children>
+            <Label styleClass="title" text="WELCOME">
+               <font>
+                  <Font size="45.0" />
+               </font>
+               <VBox.margin>
+                  <Insets top="60.0" />
+               </VBox.margin></Label>
+            <TextField fx:id="txfGebruikersnaam" prefHeight="55.0" prefWidth="400.0" promptText="USERNAME">
+               <font>
+                  <Font size="22.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="TEXT" />
+               </cursor>
+               <VBox.margin>
+                  <Insets top="120.0" />
+               </VBox.margin>
+               <styleClass>
+                  <String fx:value="input-field" />
+                  <String fx:value="shadow-bottom-right" />
+               </styleClass>
+            </TextField>
+            <PasswordField fx:id="pwfWachtwoord" prefHeight="55.0" prefWidth="400.0" promptText="PASSWORD">
+               <cursor>
+                  <Cursor fx:constant="TEXT" />
+               </cursor>
+               <font>
+                  <Font size="22.0" />
+               </font>
+               <VBox.margin>
+                  <Insets top="30.0" />
+               </VBox.margin>
+               <styleClass>
+                  <String fx:value="input-field" />
+                  <String fx:value="input-field-left-blue" />
+                  <String fx:value="shadow-bottom-right" />
+               </styleClass>
+            </PasswordField>
+            <Label fx:id="lblErrorGebruikersnaam" alignment="CENTER" prefWidth="700.0" styleClass="error-message" textAlignment="CENTER" textOverrun="CLIP" wrapText="true">
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblErrorWachtwoord" alignment="CENTER" prefWidth="700.0" styleClass="error-message" textAlignment="CENTER" textOverrun="CLIP" wrapText="true">
+               <VBox.margin>
+                  <Insets top="5.0" />
+               </VBox.margin>
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblErrorDomein" alignment="CENTER" prefWidth="700.0" styleClass="error-message" textAlignment="CENTER" textOverrun="CLIP" wrapText="true">
+               <VBox.margin>
+                  <Insets top="5.0" />
+               </VBox.margin>
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Button fx:id="btnLogin" alignment="CENTER" contentDisplay="RIGHT" mnemonicParsing="false" onAction="#loginOnAction" onKeyPressed="#loginOnKeyPressed" text="LOGIN" textAlignment="JUSTIFY">
+               <font>
+                  <Font size="25.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <VBox.margin>
+                  <Insets bottom="40.0" top="40.0" />
+               </VBox.margin>
+               <graphic>
+                  <ImageView fitHeight="38.0" fitWidth="38.0">
+                     <image>
+                        <Image url="@../../resources/images/login-door.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <styleClass>
+                  <String fx:value="shadow-bottom-right" />
+                  <String fx:value="button-large" />
+               </styleClass>
+               <padding>
+                  <Insets bottom="10.0" left="25.0" right="25.0" top="10.0" />
+               </padding>
+            </Button>
+         </children>
+      </VBox>
+   </center>
+   <stylesheets>
+      <URL value="@../../resources/css/global.css" />
+      <URL value="@../../resources/css/aanmeldScherm.css" />
+   </stylesheets>
+</fx:root>

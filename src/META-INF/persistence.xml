@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.2" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd">
+  <persistence-unit name="ticketingsystem" transaction-type="RESOURCE_LOCAL">
+    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+    <class>domain.Werknemer</class>
+    <class>domain.Klant</class>
+    <class>domain.Aanmeldpoging</class>
+    <class>domain.Contract</class>
+    <class>domain.Contactpersoon</class>
+    <class>domain.Adres</class>
+    <class>domain.Ticket</class>
+    <class>domain.Comment</class>
+    <class>domain.ContractType</class>
+    <class>domain.statistieken.Statistiek</class>
+    <properties>
+      <property name="eclipselink.allow-zero-id" value="true"/>
+      <!-- Development (database must be created manually) (SQL server login must be enabled) -->
+      <property name="javax.persistence.jdbc.driver" value="com.microsoft.sqlserver.jdbc.SQLServerDriver" />
+      <property name="javax.persistence.jdbc.url" value="jdbc:sqlserver://localhost:1433;databaseName=ticketingsystem;" />
+      <property name="javax.persistence.jdbc.user" value="sa" />
+      <property name="javax.persistence.jdbc.password" value="password" />
+		  <property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>
+      <!-- Production -->
+<!--       <property name="javax.persistence.jdbc.driver" value="com.microsoft.sqlserver.jdbc.SQLServerDriver" /> -->
+<!--       <property name="javax.persistence.jdbc.url" value="jdbc:sqlserver://;databaseName=" /> -->
+<!--       <property name="javax.persistence.jdbc.user" value="" /> -->
+<!--       <property name="javax.persistence.jdbc.password" value="" /> -->
+<!-- 	     <property name="javax.persistence.schema-generation.database.action" value="none"/> -->
+    </properties>
+  </persistence-unit>
+</persistence>

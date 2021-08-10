@@ -1,0 +1,4 @@
+.text-field:hover, .text-field:focused, .combo-box:focused, .combo-box:hover {
+	-fx-border-color: dodgerblue;	
+	-fx-border-width: 1.0 1.0 1.0 5.0; 
+}

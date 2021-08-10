@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<fx:root maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="300.0" type="AnchorPane" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+
+   <children>
+      <VBox>
+         <children>
+            <Label contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="73.0" styleClass="heading" text="Tools">
+               <font>
+                  <Font size="36.0" />
+               </font>
+               <padding>
+                  <Insets top="10.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets left="20.0" />
+               </VBox.margin>
+               <stylesheets>
+                  <URL value="@../../resources/css/zijbalk.css" />
+                  <URL value="@../../resources/css/global.css" />
+               </stylesheets>
+            </Label>
+            <Hyperlink fx:id="hypDashboard" maxHeight="-Infinity" minHeight="-Infinity" onAction="#hypChangePanelOnAction" prefHeight="70.0" prefWidth="300.0" styleClass="link-field" text="Dashboard">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../resources/images/dashboard.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets left="20.0" />
+               </padding>
+               <stylesheets>
+                  <URL value="@../../resources/css/global.css" />
+                  <URL value="@../../resources/css/zijbalk.css" />
+               </stylesheets>
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </Hyperlink>
+            <Hyperlink fx:id="hypManageCustomers" maxHeight="-Infinity" minHeight="-Infinity" onAction="#hypChangePanelOnAction" prefHeight="70.0" prefWidth="300.0" styleClass="link-field" text="Manage Customers">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <padding>
+                  <Insets left="20.0" />
+               </padding>
+               <stylesheets>
+                  <URL value="@../../resources/css/global.css" />
+                  <URL value="@../../resources/css/zijbalk.css" />
+               </stylesheets>
+               <graphic>
+                  <ImageView fitHeight="40.0" fitWidth="50.0">
+                     <image>
+                        <Image url="@../../resources/images/users.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Hyperlink>
+            <Hyperlink fx:id="hypManageEmployees" maxHeight="-Infinity" minHeight="-Infinity" onAction="#hypChangePanelOnAction" prefHeight="70.0" prefWidth="300.0" styleClass="link-field" text="Manage Employees" wrapText="true">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <padding>
+                  <Insets left="20.0" />
+               </padding>
+               <stylesheets>
+                  <URL value="@../../resources/css/global.css" />
+                  <URL value="@../../resources/css/zijbalk.css" />
+               </stylesheets>
+               <graphic>
+                  <ImageView fitHeight="40.0" fitWidth="50.0">
+                     <image>
+                        <Image url="@../../resources/images/users.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Hyperlink>
+            <Hyperlink fx:id="hypManageContracts" maxHeight="-Infinity" minHeight="-Infinity" onAction="#hypChangePanelOnAction" prefHeight="70.0" prefWidth="300.0" styleClass="link-field" text="Manage Contracts" wrapText="true">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <padding>
+                  <Insets left="20.0" />
+               </padding>
+               <stylesheets>
+                  <URL value="@../../resources/css/global.css" />
+                  <URL value="@../../resources/css/zijbalk.css" />
+               </stylesheets>
+               <graphic>
+                  <ImageView fitHeight="40.0" fitWidth="50.0">
+                     <image>
+                        <Image url="@../../resources/images/file-blue.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </Hyperlink>
+            <Hyperlink fx:id="hypNewTicket" maxHeight="-Infinity" minHeight="-Infinity" onAction="#hypChangePanelOnAction" prefHeight="70.0" prefWidth="300.0" styleClass="link-field" text="New Ticket">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <padding>
+                  <Insets left="20.0" />
+               </padding>
+               <stylesheets>
+                  <URL value="@../../resources/css/global.css" />
+                  <URL value="@../../resources/css/zijbalk.css" />
+               </stylesheets>
+               <graphic>
+                  <ImageView fitHeight="40.0" fitWidth="50.0">
+                     <image>
+                        <Image url="@../../resources/images/ticketToevoegen.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Hyperlink>
+            <AnchorPane fx:id="anchorTicketsInProgess">
+               <children>
+                  <Hyperlink fx:id="hypTicketsInProgess" maxHeight="-Infinity" minHeight="-Infinity" onAction="#hypChangePanelOnAction" prefHeight="70.0" prefWidth="300.0" styleClass="link-field" text="Open Tickets" wrapText="true">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <padding>
+                        <Insets left="20.0" />
+                     </padding>
+                     <stylesheets>
+                        <URL value="@../../resources/css/global.css" />
+                        <URL value="@../../resources/css/zijbalk.css" />
+                     </stylesheets>
+                     <graphic>
+                        <ImageView fitHeight="40.0" fitWidth="50.0">
+                           <image>
+                              <Image url="@../../resources/images/ticketInBehandeling.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Hyperlink>
+                  <Label fx:id="lblAantalTicketsInProgress" layoutX="196.0" layoutY="22.0" text="(66)" textFill="DODGERBLUE" AnchorPane.leftAnchor="196.0" AnchorPane.topAnchor="22.0">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <Hyperlink fx:id="hypFinishedTickets" maxHeight="-Infinity" minHeight="-Infinity" onAction="#hypChangePanelOnAction" prefHeight="70.0" prefWidth="300.0" styleClass="link-field" text="Closed Tickets">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <padding>
+                  <Insets left="20.0" />
+               </padding>
+               <stylesheets>
+                  <URL value="@../../resources/css/global.css" />
+                  <URL value="@../../resources/css/zijbalk.css" />
+               </stylesheets>
+               <graphic>
+                  <ImageView fitHeight="40.0" fitWidth="50.0">
+                     <image>
+                        <Image url="@../../resources/images/ticketAfgewerkt.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Hyperlink>
+            <Hyperlink fx:id="hypKnowledgeBase" maxHeight="-Infinity" minHeight="-Infinity" onAction="#hypChangePanelOnAction" prefHeight="70.0" prefWidth="300.0" styleClass="link-field" text="Knowledge Base">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <padding>
+                  <Insets left="20.0" />
+               </padding>
+               <stylesheets>
+                  <URL value="@../../resources/css/global.css" />
+                  <URL value="@../../resources/css/zijbalk.css" />
+               </stylesheets>
+               <graphic>
+                  <ImageView fitHeight="40.0" fitWidth="50.0">
+                     <image>
+                        <Image url="@../../resources/images/database.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Hyperlink>
+            <Hyperlink fx:id="hypKPI" maxHeight="-Infinity" minHeight="-Infinity" onAction="#hypChangePanelOnAction" prefHeight="70.0" prefWidth="300.0" styleClass="link-field" text="Manage KPI">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <padding>
+                  <Insets left="20.0" />
+               </padding>
+               <stylesheets>
+                  <URL value="@../../resources/css/global.css" />
+                  <URL value="@../../resources/css/zijbalk.css" />
+               </stylesheets>
+               <graphic>
+                  <ImageView fitHeight="40.0" fitWidth="50.0">
+                     <image>
+                        <Image url="@../../resources/images/database.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Hyperlink>
+            <Hyperlink fx:id="hypStatistics" maxHeight="-Infinity" minHeight="-Infinity" onAction="#hypChangePanelOnAction" prefHeight="70.0" prefWidth="300.0" styleClass="link-field" text="Statistics">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <padding>
+                  <Insets left="20.0" />
+               </padding>
+               <stylesheets>
+                  <URL value="@../../resources/css/global.css" />
+                  <URL value="@../../resources/css/zijbalk.css" />
+               </stylesheets>
+               <graphic>
+                  <ImageView fitHeight="40.0" fitWidth="50.0">
+                     <image>
+                        <Image url="@../../resources/images/graph.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </Hyperlink>
+         </children>
+      </VBox>
+      <Line endX="270.0" startX="60.0" stroke="#2d2d2d" strokeWidth="1.2" AnchorPane.bottomAnchor="70.0" AnchorPane.leftAnchor="80.0" AnchorPane.rightAnchor="20.0" />
+      <HBox alignment="BOTTOM_LEFT" prefWidth="300.0" styleClass="selectable" AnchorPane.bottomAnchor="0.0">
+         <children>
+            <ImageView fitHeight="40.0" fitWidth="50.0">
+               <image>
+                  <Image url="@../../resources/images/user.png" />
+               </image>
+               <HBox.margin>
+                  <Insets bottom="20.0" left="20.0" top="4.0" />
+               </HBox.margin>
+            </ImageView>
+            <VBox prefHeight="70.0" prefWidth="225.0">
+               <children>
+                  <Label fx:id="lblGebruikersnaam" alignment="TOP_LEFT" contentDisplay="BOTTOM" maxWidth="1.7976931348623157E308" nodeOrientation="LEFT_TO_RIGHT" text="Gebruikersnaam">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets left="10.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Hyperlink contentDisplay="TOP" maxWidth="1.7976931348623157E308" onAction="#hypAfmeldenOnAction" styleClass="link-text" text="Sign out">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <stylesheets>
+                        <URL value="@../../resources/css/global.css" />
+                        <URL value="@../../resources/css/zijbalk.css" />
+                     </stylesheets>
+                     <VBox.margin>
+                        <Insets left="10.0" />
+                     </VBox.margin>
+                  </Hyperlink>
+               </children>
+            </VBox>
+         </children>
+         <stylesheets>
+            <URL value="@../../resources/css/global.css" />
+            <URL value="@../../resources/css/zijbalk.css" />
+         </stylesheets>
+      </HBox>
+   </children>
+   <stylesheets>
+      <URL value="@../../resources/css/global.css" />
+      <URL value="@../../resources/css/zijbalk.css" />
+   </stylesheets>
+   <styleClass>
+      <String fx:value="gradient-background" />
+      <String fx:value="sidebar-border-left" />
+   </styleClass>
+</fx:root>

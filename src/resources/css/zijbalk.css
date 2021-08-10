@@ -1,0 +1,38 @@
+.sidebar-border-left {
+	-fx-border-width: 0.0 0.1 0.0 0.0; 
+	-fx-border-color: #707070;
+}
+
+.heading {
+	-fx-font-family: "Metropolis Bold";
+	-fx-font-size: 45.0;
+	-fx-text-fill: #2d2d2d;
+}
+/*Link field */
+.link-field {
+	-fx-font-family: "Metropolis";
+	-fx-font-size: 20.0;
+	-fx-text-fill: black;
+	-fx-border-width: 0.0 8.0 0.0 0.0; 
+	-fx-border-color: transparent;
+	-fx-border-style: solid;
+	-fx-padding: 15.0 0.0 15.0 20.0;
+	-fx-underline: false;
+ }
+.link-field:hover {
+	-fx-background-color: #d3d3d3;
+}
+
+/*Link text */
+.link-text {
+	-fx-border-width: 0.0; 
+	-fx-font-family: "Metropolis Extra Bold";
+	-fx-font-size: 15.0;
+	-fx-text-fill: dodgerblue;
+	-fx-underline: false;
+}
+.link-text:hover, .link-text:focused {
+	-fx-font-family: "Metropolis Black";
+	-fx-underline: true;
+	-fx-stroke-width: 5.0;
+}

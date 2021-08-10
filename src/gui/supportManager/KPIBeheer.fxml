@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="980.0" stylesheets="@../../resources/css/global.css" type="GridPane" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+  <columnConstraints>
+      <ColumnConstraints hgrow="ALWAYS" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="100.0" />
+    <ColumnConstraints hgrow="NEVER" minWidth="10.0" />
+    <ColumnConstraints hgrow="ALWAYS" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="100.0" />
+      <ColumnConstraints />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints minHeight="10.0" />
+    <RowConstraints minHeight="10.0" prefHeight="30.0" />
+    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="ALWAYS" />
+      <RowConstraints minHeight="10.0" prefHeight="70.0" />
+  </rowConstraints>
+   <children>
+      <ListView fx:id="lijstTrackedStatistics" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2">
+         <GridPane.margin>
+            <Insets left="40.0" right="20.0" />
+         </GridPane.margin>
+      </ListView>
+      <ListView fx:id="lijstUntrackedStatistics" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
+         <GridPane.margin>
+            <Insets left="20.0" right="40.0" />
+         </GridPane.margin>
+      </ListView>
+      <Label text="Manage Statistics" GridPane.columnSpan="4">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+         <GridPane.margin>
+            <Insets bottom="10.0" left="40.0" top="10.0" />
+         </GridPane.margin>
+      </Label>
+      <Label text="Tracked Statistics" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label text="Untracked Statistics" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Button fx:id="btnTrackStatistiek" mnemonicParsing="false" onAction="#trackStatistiek" prefHeight="25.0" prefWidth="40.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+         <GridPane.margin>
+            <Insets bottom="40.0" />
+         </GridPane.margin>
+         <graphic>
+            <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../resources/images/left-arrow.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button fx:id="btnUntrackStatistiek" mnemonicParsing="false" onAction="#untrackStatistiek" prefHeight="25.0" prefWidth="40.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+         <GridPane.margin>
+            <Insets top="40.0" />
+         </GridPane.margin>
+         <graphic>
+            <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../resources/images/right-arrow.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button fx:id="btnCancel" mnemonicParsing="false" onAction="#cancelChanges" prefHeight="39.0" text="Cancel" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="3">
+         <GridPane.margin>
+            <Insets bottom="20.0" right="40.0" top="20.0" />
+         </GridPane.margin>
+         <graphic>
+            <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../resources/images/cross.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnSaveChanges" mnemonicParsing="false" onAction="#saveChanges" prefHeight="39.0" text="Save Changes" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="3">
+         <GridPane.margin>
+            <Insets bottom="20.0" right="145.0" top="20.0" />
+         </GridPane.margin>
+         <font>
+            <Font size="16.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../resources/images/checkmark.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Label fx:id="lblErrorSaveChanges" prefWidth="269.0" wrapText="true">
+         <GridPane.margin>
+            <Insets left="200.0" />
+         </GridPane.margin>
+      </Label>
+   </children>
+</fx:root>

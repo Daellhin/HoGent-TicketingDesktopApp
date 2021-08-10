@@ -1,0 +1,367 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<fx:root alignment="TOP_LEFT" maxHeight="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefWidth="980.0" type="StackPane" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <SplitPane dividerPositions="0.4774436090225564" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefWidth="980.0">
+         <items>
+            <AnchorPane prefHeight="400.0" prefWidth="980.0">
+               <children>
+                  <Label fx:id="lblManageEmployees" layoutX="14.0" layoutY="7.0" text="Manage Employees" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="7.0">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="btnAddEmployees" layoutX="850.0" layoutY="6.0" mnemonicParsing="false" onAction="#addEmployee" prefHeight="27.0" styleClass="button-small" text="Add Employees" AnchorPane.rightAnchor="106.0" AnchorPane.topAnchor="5.0">
+                     <graphic>
+                        <ImageView fitHeight="15.0" fitWidth="15.0">
+                           <image>
+                              <Image url="@../../resources/images/plus.png" />
+                           </image>
+                        </ImageView>
+                     </graphic></Button>
+                  <Label fx:id="lblErrorAddEmployee" alignment="TOP_RIGHT" layoutX="306.0" layoutY="10.0" prefHeight="18.0" textAlignment="JUSTIFY" textFill="RED" wrapText="true" AnchorPane.leftAnchor="310.0" />
+                  <TableView fx:id="tableBeheerWerknemers" focusTraversable="false" layoutY="38.0" prefHeight="172.0" prefWidth="978.0" styleClass="table-view-top-border" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="38.0">
+                     <columns>
+                        <TableColumn fx:id="colWerknemernummer" prefWidth="130.0" text="Employees Number" />
+                        <TableColumn fx:id="colUsername" prefWidth="130.0" text="Username" />
+                        <TableColumn fx:id="colNaam" prefWidth="130.0" text="Name" />
+                        <TableColumn fx:id="colVoornaam" prefWidth="130.0" text="First Name" />
+                        <TableColumn fx:id="colRol" prefWidth="130.0" text="Role" />
+                        <TableColumn fx:id="colStatus" prefWidth="130.0" text="Status" />
+                     </columns>
+                     <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                     </columnResizePolicy>
+                  </TableView>
+                  <Button fx:id="btnShowFilters" layoutX="885.0" layoutY="-4.0" mnemonicParsing="false" onAction="#showFilters" styleClass="button-small" text="Filters ▼" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="5.0">
+                     <font>
+                        <Font name="Metropolis-Regular" size="12.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="15.0" fitWidth="17.0">
+                           <image>
+                              <Image url="@../../resources/images/filter.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+            </AnchorPane>
+            <AnchorPane>
+               <children>
+                  <ScrollPane fitToWidth="true" layoutX="-1.0" layoutY="71.0" pannable="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <content>
+                        <AnchorPane layoutY="500.0">
+                           <children>
+                              <VBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <children>
+                                    <HBox alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308">
+                                       <children>
+                                          <Label fx:id="lblEmployeeInformation" text="Employee Information">
+                                             <font>
+                                                <Font size="20.0" />
+                                             </font>
+                                             <HBox.margin>
+                                                <Insets left="24.0" right="10.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                          <Label fx:id="lblErrorSaveChanges" prefHeight="17.0" prefWidth="337.0" text="General error" textFill="RED" wrapText="true" />
+                                          <Button fx:id="btnSaveChanges" maxHeight="-Infinity" minHeight="-Infinity" mnemonicParsing="false" onAction="#saveChanges" prefHeight="37.0" styleClass="button-medium" text="Save changes">
+                                             <font>
+                                                <Font size="16.0" />
+                                             </font>
+                                             <HBox.margin>
+                                                <Insets left="117.0" right="10.0" />
+                                             </HBox.margin>
+                                             <graphic>
+                                                <ImageView fitHeight="20.0" fitWidth="20.0">
+                                                   <image>
+                                                      <Image url="@../../resources/images/checkmark.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                          </Button>
+                                          <Button fx:id="btnCancel" maxHeight="-Infinity" minHeight="-Infinity" mnemonicParsing="false" onAction="#cancelChanges" prefHeight="37.0" styleClass="button-medium" text="Cancel">
+                                             <font>
+                                                <Font size="16.0" />
+                                             </font>
+                                             <HBox.margin>
+                                                <Insets right="10.0" />
+                                             </HBox.margin>
+                                             <graphic>
+                                                <ImageView fitHeight="22.0" fitWidth="22.0">
+                                                   <image>
+                                                      <Image url="@../../resources/images/cross.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                          </Button>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" top="10.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                    <HBox>
+                                       <children>
+                                          <VBox prefWidth="460.0">
+                                             <children>
+                                                <AnchorPane>
+                                                   <children>
+                                                      <Label fx:id="lblEmployeeNumber" text="Employee Number" AnchorPane.leftAnchor="24.0" AnchorPane.topAnchor="0.0" />
+                                                      <TextField fx:id="txfEmployeeNumber" disable="true" editable="false" layoutX="24.0" layoutY="19.0" prefWidth="210.0" styleClass="textfield-error" AnchorPane.leftAnchor="24.0" />
+                                                      <Label fx:id="lblEmployeeSince" layoutX="247.0" text="Employee Since" AnchorPane.leftAnchor="247.0" AnchorPane.topAnchor="0.0" />
+                                                      <TextField fx:id="txfEmployeeSince" disable="true" editable="false" layoutX="247.0" layoutY="19.0" prefWidth="210.0" AnchorPane.leftAnchor="247.0" AnchorPane.topAnchor="19.0" />
+                                                      <Label fx:id="lblUsername" layoutX="24.0" layoutY="53.0" text="Username" AnchorPane.leftAnchor="24.0" />
+                                                      <TextField fx:id="txfUsername" layoutX="24.0" layoutY="70.0" prefWidth="433.0" AnchorPane.leftAnchor="24.0" AnchorPane.topAnchor="70.0" />
+                                                   </children>
+                                                </AnchorPane>
+                                                <Label fx:id="lblErrorUsername" prefWidth="433.0" textFill="RED" wrapText="true">
+                                                   <font>
+                                                      <Font size="1.0" />
+                                                   </font>
+                                                   <VBox.margin>
+                                                      <Insets bottom="5.0" left="24.0" top="5.0" />
+                                                   </VBox.margin>
+                                                </Label>
+                                                <AnchorPane>
+                                                   <children>
+                                                      <Label fx:id="lblName" layoutX="23.0" layoutY="1.0" text="Name" AnchorPane.leftAnchor="23.0" AnchorPane.topAnchor="0.0" />
+                                                      <TextField fx:id="txfName" layoutX="23.0" layoutY="22.0" prefWidth="210.0" AnchorPane.leftAnchor="24.0" AnchorPane.topAnchor="19.0" />
+                                                      <Label fx:id="lblFirstName" layoutX="247.0" layoutY="2.0" text="First Name" AnchorPane.leftAnchor="247.0" AnchorPane.topAnchor="0.0" />
+                                                      <TextField fx:id="txfFirstName" layoutX="247.0" layoutY="22.0" prefWidth="210.0" AnchorPane.leftAnchor="247.0" AnchorPane.topAnchor="19.0" />
+                                                   </children>
+                                                </AnchorPane>
+                                                <HBox>
+                                                   <children>
+                                                      <Label fx:id="lblErrorName" prefWidth="210.0" textFill="RED" wrapText="true">
+                                                         <HBox.margin>
+                                                            <Insets bottom="5.0" left="24.0" top="5.0" />
+                                                         </HBox.margin>
+                                                         <font>
+                                                            <Font size="1.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label fx:id="lblErrorFirstName" prefWidth="210.0" textFill="RED" wrapText="true">
+                                                         <font>
+                                                            <Font size="1.0" />
+                                                         </font>
+                                                         <HBox.margin>
+                                                            <Insets bottom="5.0" left="10.0" top="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                   </children>
+                                                </HBox>
+                                                <AnchorPane prefHeight="50.0">
+                                                   <children>
+                                                      <Label fx:id="lblEmail" text="E-mail" AnchorPane.leftAnchor="24.0" AnchorPane.topAnchor="0.0" />
+                                                      <TextField fx:id="txfEmail" layoutX="24.0" layoutY="13.0" prefWidth="433.0" AnchorPane.leftAnchor="24.0" AnchorPane.topAnchor="19.0" />
+                                                   </children>
+                                                </AnchorPane>
+                                                <Label fx:id="lblErrorEmail" prefWidth="433.0" textFill="RED" wrapText="true">
+                                                   <font>
+                                                      <Font size="1.0" />
+                                                   </font>
+                                                   <VBox.margin>
+                                                      <Insets left="24.0" />
+                                                   </VBox.margin>
+                                                </Label>
+                                                <AnchorPane prefHeight="95.0" prefWidth="460.0">
+                                                   <children>
+                                                      <Label fx:id="lblStatus" text="Status" AnchorPane.leftAnchor="24.0" />
+                                                      <ComboBox fx:id="cboStatus" layoutX="24.0" layoutY="19.0" prefWidth="210.0" AnchorPane.leftAnchor="24.0" AnchorPane.topAnchor="19.0" />
+                                                      <Label fx:id="lblRole" text="Role" AnchorPane.leftAnchor="247.0" />
+                                                      <ComboBox fx:id="cboRole" layoutX="247.0" layoutY="19.0" prefWidth="210.0" AnchorPane.leftAnchor="247.0" AnchorPane.topAnchor="19.0" />
+                                                      <ComboBox fx:id="cboDivision" layoutX="24.0" layoutY="68.0" prefWidth="210.0" AnchorPane.leftAnchor="24.0" AnchorPane.topAnchor="70.0" />
+                                                      <Label fx:id="lblDivision" layoutX="24.0" layoutY="46.0" text="Division" AnchorPane.leftAnchor="24.0" AnchorPane.topAnchor="50.0" />
+                                                      <Label fx:id="lblErrorDivision" layoutX="24.0" layoutY="95.0" prefWidth="377.0" text="Label" textFill="RED" wrapText="true" AnchorPane.leftAnchor="24.0" AnchorPane.topAnchor="100.0">
+                                                         <font>
+                                                            <Font size="1.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label fx:id="lblErrorRole" layoutX="247.0" layoutY="56.0" prefWidth="210.0" textFill="RED" wrapText="true">
+                                                         <font>
+                                                            <Font size="1.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </AnchorPane>
+                                             </children>
+                                             <HBox.margin>
+                                                <Insets right="23.0" />
+                                             </HBox.margin>
+                                          </VBox>
+                                          <VBox>
+                                             <children>
+                                                <AnchorPane>
+                                                   <children>
+                                                      <Label fx:id="lblCountry" layoutX="23.0" layoutY="3.0" text="Country" AnchorPane.leftAnchor="24.0" AnchorPane.topAnchor="0.0" />
+                                                      <ComboBox fx:id="cboCountry" layoutX="17.0" layoutY="17.0" prefHeight="25.0" prefWidth="433.0" AnchorPane.leftAnchor="24.0" AnchorPane.topAnchor="19.0" />
+                                                   </children>
+                                                </AnchorPane>
+                                                <Label fx:id="lblErrorCountry" prefWidth="377.0" text="Label" textFill="RED" wrapText="true">
+                                                   <font>
+                                                      <Font size="1.0" />
+                                                   </font>
+                                                   <VBox.margin>
+                                                      <Insets bottom="5.0" left="24.0" top="5.0" />
+                                                   </VBox.margin>
+                                                </Label>
+                                                <AnchorPane>
+                                                   <children>
+                                                      <Label fx:id="lblTown" layoutX="247.0" layoutY="6.0" text="Town" AnchorPane.leftAnchor="247.0" AnchorPane.topAnchor="0.0" />
+                                                      <Label fx:id="lblPostalCode" layoutX="24.0" layoutY="6.0" text="Postal Code" AnchorPane.leftAnchor="24.0" AnchorPane.topAnchor="0.0" />
+                                                      <TextField fx:id="txfPostCode" layoutX="24.0" layoutY="23.0" prefWidth="210.0" AnchorPane.leftAnchor="24.0" AnchorPane.topAnchor="19.0" />
+                                                      <TextField fx:id="txfTown" layoutX="246.0" layoutY="20.0" prefHeight="25.0" prefWidth="210.0" AnchorPane.topAnchor="19.0" />
+                                                   </children>
+                                                </AnchorPane>
+                                                <HBox>
+                                                   <children>
+                                                      <Label fx:id="lblErrorPostalCode" prefWidth="210.0" text="Label" textFill="RED" wrapText="true">
+                                                         <font>
+                                                            <Font size="1.0" />
+                                                         </font>
+                                                         <HBox.margin>
+                                                            <Insets left="24.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                      <Label fx:id="lblErrorTown" prefWidth="210.0" text="Label" textFill="RED" wrapText="true">
+                                                         <font>
+                                                            <Font size="1.0" />
+                                                         </font>
+                                                         <HBox.margin>
+                                                            <Insets left="13.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                   </children>
+                                                   <VBox.margin>
+                                                      <Insets />
+                                                   </VBox.margin>
+                                                </HBox>
+                                                <AnchorPane>
+                                                   <children>
+                                                      <TextField fx:id="txfStreetName" layoutX="22.0" layoutY="19.0" prefHeight="25.0" prefWidth="256.0" AnchorPane.leftAnchor="24.0" AnchorPane.topAnchor="19.0" />
+                                                      <Label fx:id="lblStreetName" text="Street Name" AnchorPane.leftAnchor="24.0" AnchorPane.topAnchor="0.0" />
+                                                      <TextField fx:id="txfHouseNr" layoutX="292.0" layoutY="18.0" prefHeight="25.0" prefWidth="78.0" AnchorPane.leftAnchor="292.0" AnchorPane.topAnchor="19.0" />
+                                                      <Label fx:id="lblHouseNr" layoutX="292.0" text="House Nr" AnchorPane.leftAnchor="292.0" />
+                                                      <Label fx:id="lblBusNr" layoutX="381.0" text="Box Nr" AnchorPane.leftAnchor="381.0" AnchorPane.topAnchor="0.0" />
+                                                      <TextField fx:id="txfBusNr" layoutX="376.0" layoutY="18.0" prefHeight="25.0" prefWidth="78.0" AnchorPane.leftAnchor="376.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="19.0" />
+                                                   </children>
+                                                </AnchorPane>
+                                                <Label fx:id="lblErrorStreet" prefWidth="433.0" textFill="RED" wrapText="true">
+                                                   <font>
+                                                      <Font size="1.0" />
+                                                   </font>
+                                                   <VBox.margin>
+                                                      <Insets left="24.0" />
+                                                   </VBox.margin>
+                                                </Label>
+                                                <Label fx:id="lblErrorHouseNr" prefWidth="433.0" textFill="RED" wrapText="true">
+                                                   <font>
+                                                      <Font size="1.0" />
+                                                   </font>
+                                                   <VBox.margin>
+                                                      <Insets left="24.0" />
+                                                   </VBox.margin>
+                                                </Label>
+                                                <Label fx:id="lblErrorBoxNr" prefWidth="433.0" textFill="RED" wrapText="true">
+                                                   <font>
+                                                      <Font size="1.0" />
+                                                   </font>
+                                                   <VBox.margin>
+                                                      <Insets left="24.0" />
+                                                   </VBox.margin>
+                                                </Label>
+                                                <AnchorPane>
+                                                   <children>
+                                                      <Button fx:id="btnAddTelephoneNumber" layoutX="24.0" layoutY="110.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#addTelephoneNumber" prefHeight="29.0" prefWidth="29.0" styleClass="button-small" textAlignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="56.0">
+                                                         <graphic>
+                                                            <ImageView fitHeight="10.0" fitWidth="10.0" styleClass="button-small">
+                                                               <image>
+                                                                  <Image url="@../../resources/images/plus.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                         </graphic></Button>
+                                                      <Button fx:id="btnRemoveTelephoneNumber" layoutX="47.0" layoutY="115.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#removeTelephoneNumber" prefHeight="29.0" prefWidth="29.0" styleClass="button-small" AnchorPane.bottomAnchor="-0.0" AnchorPane.leftAnchor="24.0">
+                                                         <graphic>
+                                                            <ImageView fitHeight="10.0" fitWidth="10.0">
+                                                               <image>
+                                                                  <Image url="@../../resources/images/minus.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                         </graphic></Button>
+                                                      <TextField fx:id="txfTelephoneNumber" layoutX="89.0" layoutY="110.0" prefHeight="29.0" prefWidth="368.0" AnchorPane.leftAnchor="89.0" />
+                                                      <ListView fx:id="listTelephoneNumbers" focusTraversable="false" layoutX="24.0" layoutY="23.0" prefHeight="83.0" prefWidth="433.0" AnchorPane.topAnchor="19.0" />
+                                                      <Label fx:id="lblTelephoneNumbers" layoutX="24.0" layoutY="6.0" text="Telephone Numbers" AnchorPane.leftAnchor="24.0" AnchorPane.topAnchor="0.0" />
+                                                   </children>
+                                                </AnchorPane>
+                                                <Label fx:id="lblErrorTelephone" prefWidth="433.0" textFill="RED" wrapText="true">
+                                                   <font>
+                                                      <Font size="1.0" />
+                                                   </font>
+                                                   <VBox.margin>
+                                                      <Insets left="24.0" />
+                                                   </VBox.margin>
+                                                </Label>
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </ScrollPane>
+               </children>
+            </AnchorPane>
+         </items>
+      </SplitPane>
+      <AnchorPane fx:id="anchorFilters" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="326.0" prefWidth="220.0" style="-fx-background-color: white;" styleClass="shadow-bottom-right" visible="false" StackPane.alignment="TOP_RIGHT">
+         <StackPane.margin>
+            <Insets right="6.0" top="34.0" />
+         </StackPane.margin>
+         <children>
+            <Label text="Employee Number" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0" />
+            <TextField fx:id="txfFilterEmployeeNr" onKeyReleased="#filterOnAction" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="30.0" />
+            <Label text="Username" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="65.0" />
+            <TextField fx:id="txfFilterUsername" onKeyReleased="#filterOnAction" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="85.0" />
+            <Label text="Name" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="120.0" />
+            <TextField fx:id="txfFilterName" onKeyReleased="#filterOnAction" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="140.0" />
+            <Label layoutX="3.0" layoutY="176.0" text="First Name" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="175.0" />
+            <TextField fx:id="txfFilterFirstName" layoutX="10.0" layoutY="199.0" onKeyReleased="#filterOnAction" prefHeight="25.0" prefWidth="200.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="195.0" />
+            <Label layoutX="11.0" layoutY="238.0" text="Status" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="230.0" />
+            <CheckBox fx:id="chkFilterActive" layoutX="11.0" layoutY="258.0" mnemonicParsing="false" onAction="#filterOnAction" selected="true" text="Active" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="250.0" />
+            <CheckBox fx:id="chkFilterBlocked" layoutX="11.0" layoutY="283.0" mnemonicParsing="false" onAction="#filterOnAction" text="Blocked" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="275.0" />
+            <CheckBox fx:id="chkFiltersInactive" layoutX="11.0" layoutY="308.0" mnemonicParsing="false" onAction="#filterOnAction" text="Inactive" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="300.0" />
+            <Label layoutX="110.0" layoutY="238.0" text="Role" AnchorPane.leftAnchor="95.0" AnchorPane.topAnchor="230.0" />
+            <CheckBox fx:id="chkFilterAdministrator" layoutX="107.0" layoutY="250.0" mnemonicParsing="false" onAction="#filterOnAction" selected="true" text="Administrator" AnchorPane.leftAnchor="95.0" AnchorPane.topAnchor="250.0" />
+            <CheckBox fx:id="chkFilterSupportManager" layoutX="109.0" layoutY="275.0" mnemonicParsing="false" onAction="#filterOnAction" selected="true" text="Support Manager" AnchorPane.leftAnchor="95.0" AnchorPane.topAnchor="275.0" />
+            <CheckBox fx:id="chkFiltersTechnieker" layoutX="110.0" layoutY="300.0" mnemonicParsing="false" onAction="#filterOnAction" selected="true" text="Technician" AnchorPane.leftAnchor="95.0" AnchorPane.topAnchor="300.0" />
+         </children>
+      </AnchorPane>
+   </children>
+   <stylesheets>
+      <URL value="@../../resources/css/global.css" />
+      <URL value="@../../resources/css/beheerScherm.css" />
+   </stylesheets>
+</fx:root>
